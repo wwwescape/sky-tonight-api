@@ -1,0 +1,16 @@
+version: '3'
+services:
+  skytonightapi:
+    build: .
+    image: wwwescape/sky-tonight-api
+    container_name: skytonightapi
+    volumes:
+      - "$(pwd)/Sky Tonight API:/usr/src/app"
+      - /usr/src/app/node_modules
+    ports:
+      - 7777:7777
+    environment:
+      - PORT=7777
+      - TZ=Asia/Kolkata
+    command: 'npm start'
+    restart: unless-stopped
