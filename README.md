@@ -1,6 +1,15 @@
-# Skt Tonight API
+# Sky Tonight API
 
-## Get realtime planetary positions in your sky.
+[![GH-release](https://img.shields.io/github/v/release/wwwescape/sky-tonight-api.svg?style=flat-square)](https://github.com/wwwescape/sky-tonight-api/releases)
+[![GH-last-commit](https://img.shields.io/github/last-commit/wwwescape/sky-tonight-api.svg?style=flat-square)](https://github.com/wwwescape/sky-tonight-api/commits/master)
+[![GH-code-size](https://img.shields.io/github/languages/code-size/wwwescape/sky-tonight-api.svg?color=red&style=flat-square)](https://github.com/wwwescape/sky-tonight-api)
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=flat-square)](https://github.com/hacs/default)
+[![Codecov Coverage](https://img.shields.io/codecov/c/github/wwwescape/sky-tonight-api/main.svg?style=flat-square)](https://codecov.io/gh/wwwescape/sky-tonight-api/)
+[![CodeFactor](https://www.codefactor.io/repository/github/wwwescape/sky-tonight-api/badge?style=flat-square)](https://www.codefactor.io/repository/github/wwwescape/sky-tonight-api)
+
+
+#### Get list of visible planetary bodies in your sky.
+
 A free JSON API powered by [Don Cross' JS Astronomy Engine](http://cosinekitty.com/astronomy.js).
 
 ## Run
@@ -24,25 +33,25 @@ Remember to update volume path, port and timezone as needed.
 
 Get a list of planets, the sun and the moon above the horizon.
 ```
-GET https://{IP Address or Domain with/without port}/v3?latitude=32&longitude=-98
+GET https://{IP Address or Domain with/without port}?latitude=32&longitude=-98
 ```
 
 Get a list of planets, the sun and the moon with their declination and right ascension coordinates.
 ```
-GET https://{IP Address or Domain with/without port}/v3?latitude=32&longitude=-98&showCoords=true
+GET https://{IP Address or Domain with/without port}?latitude=32&longitude=-98&showCoords=true
 ```
 
 ## Query Parameters
 
-| Param | Default Value | Description | Minimum Version Compatible |
-| ----- | ------------- | ----------- | -------------------------- |
-| latitude | 28.627222 | Latitude of observer | v1 |
-| longitude | -80.620833 | Longitude of observer | v1 |
-| elevation | 0 | Elevation of observer in meters above sea level | v1 |
-| time | null | Time of observation in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, defaults to time of request | v2 |
-| showCoords | false | Display declination and right ascension of each body, expects true or false | v2 |
-| aboveHorizon | true | Set to false to display all planetary bodies even if they are below the horizon. | v2 |
+| Param         | Default       | Description                                                                                                   |
+| ------------- | ------------- | ------------------------------------------------------------------------------------------------------------- |
+| latitude      | 28.627222     | Latitude of the observer                                                                                      |
+| longitude     | -80.620833    | Longitude of the observer                                                                                     |
+| elevation     | 0             | Elevation of the observer in meters above sea level                                                           |
+| time          | null          | Time of observation in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format, defaults to time of request |
+| showCoords    | false         | Display declination and right ascension of each body, expects true or false                                   |
+| aboveHorizon  | true          | Set to false to display all planetary bodies even if they are below the horizon                               |
 
-## TODOs and Known Issues:
-- Reduce the size of the Docker image created
-- Figure out why Node isn't picking up the correct timezone from the Docker container.
+## TODO
+- [ ] Reduce the size of the Docker image created
+- [ ] Fix issue with Node not picking up the correct timezone from the Docker container
